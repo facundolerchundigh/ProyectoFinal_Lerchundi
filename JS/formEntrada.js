@@ -93,6 +93,9 @@ inputs.forEach( (input) => {
 formulario.addEventListener('submit', (e)=>{
   e.preventDefault();
 	const terminos = document.getElementById('terminos');
+
+	const datos = []
+
 	if(campos.usuario && campos.nombre && campos.password && campos.correo && campos.telefono && terminos.checked ){
 	
 		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
@@ -108,11 +111,11 @@ formulario.addEventListener('submit', (e)=>{
     
      inputs.forEach( (input) => {
         datos.push(`${input.name}: ${input.value}`)
+		
     });
-    const datos = []
+
     localStorage.setItem ('usuario', JSON.stringify(datos));
         
-
 	} 
     
     else {
